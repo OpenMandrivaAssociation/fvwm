@@ -7,7 +7,7 @@ Release:	%mkrel 26
 Epoch:		1
 License:	GPL
 Group:		Graphical desktop/FVWM based
-BuildRequires:	XFree86-devel xpm-devel XFree86
+BuildRequires:	X11-devel xpm-devel XFree86
 Requires:	fvwm2-icons
 URL:		http://www.fvwm.org/
 Source0:	sunsite.unc.edu:/pub/Linux/X11/window-managers/%{name}-%{version}.tar.bz2
