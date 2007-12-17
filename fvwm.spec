@@ -132,5 +132,5 @@ rm -fr $RPM_BUILD_ROOT
 %prefix/lib/X11/fvwm
 %prefix/bin/fvwm
 %prefix/bin/startfvwm
-%prefix/man/*/*
+%_mandir/man*/*
 
