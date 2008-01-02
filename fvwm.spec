@@ -21,6 +21,7 @@ Patch1:		%{name}-%{version}-imake.patch.bz2
 Patch2:		%{name}-%{version}-security.patch.bz2
 Patch3:		%{name}-%{version}-fvwmman.patch.bz2
 Patch4:		%{name}-%{version}-menu-100.patch.bz2
+Buildroot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
 FVWM (the F stands for whatever you want, but the VWM stands for Virtual Window
