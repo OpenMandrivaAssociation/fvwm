@@ -125,7 +125,6 @@ rm -fr $RPM_BUILD_ROOT
 %config(noreplace) /etc/X11/fvwm/system.fvwmrc-menu
 %config(noreplace) /etc/X11/wmsession.d/10Fvwm1
 %doc sample.fvwmrc/*
-%doc /usr/X11R6/lib/X11/doc/html/*
 %_menudir/%{name}
 %{_iconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
