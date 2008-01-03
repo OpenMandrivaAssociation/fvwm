@@ -66,15 +66,15 @@ make install install.man DESTDIR=$RPM_BUILD_ROOT
 mkdir -p $RPM_BUILD_ROOT/etc/X11/fvwm/
 rm -f $RPM_BUILD_ROOT/etc/X11/fvwm/system.fvwmrc
 
-mkdir -p $RPM_BUILD_ROOT%_menudir
-cat << EOF > $RPM_BUILD_ROOT%_menudir/%{name}
-?package(fvwm):\
-  needs=wm\
-  section=Session/Windowmanagers\
-  title="Fvwm"\
-  longtitle="FVWM Windows manager"\
-  icon="fvwm.png"\
-  command="startfvwm"
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
+[Desktop Entry]
+Type=Application
+Categories=X-MandrivaLinux-System-Session-Windowmanagers;
+Name=Fvwm
+Comment=FVWM Windows manager
+Icon=fvwm
+Exec=startfvwm
 EOF
 
 mkdir -p $RPM_BUILD_ROOT/etc/X11/fvwm
@@ -125,7 +125,7 @@ rm -fr $RPM_BUILD_ROOT
 %config(noreplace) /etc/X11/fvwm/system.fvwmrc-menu
 %config(noreplace) /etc/X11/wmsession.d/10Fvwm1
 %doc sample.fvwmrc/*
-%_menudir/%{name}
+%{_datadir}/applications/mandriva-%{name}.desktop
 %{_iconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
