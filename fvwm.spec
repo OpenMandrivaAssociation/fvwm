@@ -5,7 +5,7 @@ Release:	%mkrel 27
 Epoch:		1
 License:	GPL
 Group:		Graphical desktop/FVWM based
-BuildRequires:	X11-devel xpm-devel imake
+BuildRequires:	X11-devel xpm-devel imake x11-data-bitmaps
 Requires:	fvwm2-icons
 URL:		http://www.fvwm.org/
 Source0:	sunsite.unc.edu:/pub/Linux/X11/window-managers/%{name}-%{version}.tar.bz2
