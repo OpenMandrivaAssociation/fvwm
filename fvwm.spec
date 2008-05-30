@@ -1,20 +1,20 @@
 Name:		fvwm
 Version:	1.24r
 Summary:	An X Window System based window manager
-Release:	%mkrel 27
+Release:	%mkrel 28
 Epoch:		1
 License:	GPL
 Group:		Graphical desktop/FVWM based
 BuildRequires:	X11-devel xpm-devel imake x11-data-bitmaps
-Requires:	fvwm2-icons
+Requires:	x11-data-bitmaps fvwm2-icons xterm xsetroot
 URL:		http://www.fvwm.org/
 Source0:	sunsite.unc.edu:/pub/Linux/X11/window-managers/%{name}-%{version}.tar.bz2
-Source1:	%{name}-%{version}-system-menu.fvwmrc.bz2
-Source2:	fvwm1.menu-method.bz2
+Source1:	%{name}-%{version}-system-menu.fvwmrc
+Source2:	fvwm1.menu-method
 Source3:	%{name}.icon-48.png
 Source4:	%{name}.icon-32.png
 Source5:	%{name}.icon-16.png
-Patch0:		%{name}-%{version}-fsstnd.patch.bz2
+Patch0:		%{name}-%{version}-fsstnd.patch
 Patch1:		%{name}-%{version}-imake.patch.bz2
 Patch2:		%{name}-%{version}-security.patch.bz2
 Patch3:		%{name}-%{version}-fvwmman.patch.bz2
@@ -60,12 +60,12 @@ perl -p -i -e "s|CDEBUGFLAGS = .*|CDEBUGFLAGS = $RPM_OPT_FLAGS|" */*/Makefile
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
-make install install.man DESTDIR=$RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT/%{_datadir}/X11/fvwm/
-rm -f $RPM_BUILD_ROOT/%{_sysconfdir}/X11/fvwm/system.fvwmrc
+rm -rf %{buildroot}
+make install install.man DESTDIR=%{buildroot}
+mkdir -p %{buildroot}/%{_datadir}/X11/fvwm/
+rm -f %{buildroot}/%{_sysconfdir}/X11/fvwm/system.fvwmrc
 
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
+mkdir -p %{buildroot}%{_datadir}/applications/
 cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
 [Desktop Entry]
 Type=Application
@@ -76,20 +76,16 @@ Icon=fvwm
 Exec=startfvwm
 EOF
 
-mkdir -p $RPM_BUILD_ROOT/etc/X11/fvwm
-bzcat %{SOURCE1} > $RPM_BUILD_ROOT/%{_datadir}/X11/fvwm/system.fvwmrc
-
-mkdir -p $RPM_BUILD_ROOT/%{_menudir}
-bzcat %{SOURCE2} > $RPM_BUILD_ROOT/%{_menudir}/%{name}
-chmod a+x $RPM_BUILD_ROOT/%{_menudir}/%{name}
+install -D -m 644 %{SOURCE1} %{buildroot}/%{_datadir}/X11/fvwm/system.fvwmrc
+install -D -m 644 %{SOURCE2} %{buildroot}/%{_menudir}/%{name}
 
 # icons
-install -D -m 644 %{name}-16.png $RPM_BUILD_ROOT%{_miconsdir}/%{name}.png
-install -D -m 644 %{name}-32.png $RPM_BUILD_ROOT%{_iconsdir}/%{name}.png 
-install -D -m 644 %{name}-48.png $RPM_BUILD_ROOT%{_liconsdir}/%{name}.png
+install -D -m 644 %{name}-16.png %{buildroot}%{_miconsdir}/%{name}.png
+install -D -m 644 %{name}-32.png %{buildroot}%{_iconsdir}/%{name}.png 
+install -D -m 644 %{name}-48.png %{buildroot}%{_liconsdir}/%{name}.png
 
-mkdir -p $RPM_BUILD_ROOT/%{_datadir}/X11/wmsession.d/
-cat << EOF > $RPM_BUILD_ROOT/%{_datadir}/X11/wmsession.d/10Fvwm1
+mkdir -p %{buildroot}/%{_datadir}/X11/wmsession.d/
+cat << EOF > %{buildroot}/%{_datadir}/X11/wmsession.d/10Fvwm1
 NAME=Fvwm1
 EXEC=%{_bindir}/startfvwm
 DESC=A very stable and light window manager
@@ -99,11 +95,11 @@ EOF
 
 # 1.24r-24mdk: add startfvwm script to set cursor (defaults to wait)
 # is this the right way to set the cursor?
-cat > $RPM_BUILD_ROOT%{_bindir}/startfvwm << EOF
+cat > %{buildroot}%{_bindir}/startfvwm << EOF
 %{_bindir}/xsetroot -cursor_name left_ptr
 exec %{_bindir}/fvwm
 EOF
-chmod 755 $RPM_BUILD_ROOT%{_bindir}/startfvwm
+chmod 755 %{buildroot}%{_bindir}/startfvwm
 
 %post
 %update_menus
@@ -114,12 +110,11 @@ chmod 755 $RPM_BUILD_ROOT%{_bindir}/startfvwm
 %make_session
 
 %clean
-rm -fr $RPM_BUILD_ROOT
+rm -fr %{buildroot}
 
 %files
 %defattr(-,root,root)
 %config(noreplace) %{_menudir}/%{name}
-%config(noreplace) %{_datadir}/X11/fvwm/system.fvwmrc
 %config(noreplace) %{_datadir}/X11/wmsession.d/10Fvwm1
 %doc sample.fvwmrc/*
 %{_datadir}/applications/mandriva-%{name}.desktop
