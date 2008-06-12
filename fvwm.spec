@@ -102,11 +102,15 @@ EOF
 chmod 755 %{buildroot}%{_bindir}/startfvwm
 
 %post
+%if %mdkversion < 200900
 %update_menus
+%endif
 %make_session
 
 %postun
+%if %mdkversion < 200900
 %clean_menus
+%endif
 %make_session
 
 %clean
