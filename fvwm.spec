@@ -14,11 +14,17 @@ Source2:	fvwm1.menu-method
 Source3:	%{name}.icon-48.png
 Source4:	%{name}.icon-32.png
 Source5:	%{name}.icon-16.png
+# patch to add FHS compliance
 Patch0:		%{name}-%{version}-fsstnd.patch
+# add Alpha support on linux for the makefile
 Patch1:		%{name}-%{version}-imake.patch
+# ??? try to open a file in exclusive mode 
 Patch2:		%{name}-%{version}-security.patch
+# add a suffix to manpage 
 Patch3:		%{name}-%{version}-fvwmman.patch
+# increase the number of popup from 50 to 100
 Patch4:		%{name}-%{version}-menu-100.patch
+# remove /usr/lib/X11 from linker search path 
 Patch5:		%{name}-%{version}-config.patch
 Buildroot:	%{_tmppath}/%{name}-%{version}-root
 
@@ -96,6 +102,7 @@ EOF
 # 1.24r-24mdk: add startfvwm script to set cursor (defaults to wait)
 # is this the right way to set the cursor?
 cat > %{buildroot}%{_bindir}/startfvwm << EOF
+#!/bin/sh
 %{_bindir}/xsetroot -cursor_name left_ptr
 exec %{_bindir}/fvwm
 EOF
