@@ -84,8 +84,8 @@ install -D -m 644 %{name}-16.png %{buildroot}%{_miconsdir}/%{name}.png
 install -D -m 644 %{name}-32.png %{buildroot}%{_iconsdir}/%{name}.png 
 install -D -m 644 %{name}-48.png %{buildroot}%{_liconsdir}/%{name}.png
 
-mkdir -p %{buildroot}/%{_datadir}/X11/wmsession.d/
-cat << EOF > %{buildroot}/%{_datadir}/X11/wmsession.d/10Fvwm1
+mkdir -p %{buildroot}/%{_sysconfdir}/X11/wmsession.d/
+cat << EOF > %{buildroot}/%{_sysconfdir}/X11/wmsession.d/10Fvwm1
 NAME=Fvwm1
 EXEC=%{_bindir}/startfvwm
 DESC=A very stable and light window manager
@@ -119,7 +119,7 @@ rm -fr %{buildroot}
 %files
 %defattr(-,root,root)
 %config(noreplace) %{_menudir}/%{name}
-%config(noreplace) %{_datadir}/X11/wmsession.d/10Fvwm1
+%config(noreplace) %{_sysconfdir}/X11/wmsession.d/10Fvwm1
 %doc sample.fvwmrc/*
 %{_datadir}/applications/mandriva-%{name}.desktop
 %{_iconsdir}/%{name}.png
