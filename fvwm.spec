@@ -15,10 +15,10 @@ Source3:	%{name}.icon-48.png
 Source4:	%{name}.icon-32.png
 Source5:	%{name}.icon-16.png
 Patch0:		%{name}-%{version}-fsstnd.patch
-Patch1:		%{name}-%{version}-imake.patch.bz2
-Patch2:		%{name}-%{version}-security.patch.bz2
-Patch3:		%{name}-%{version}-fvwmman.patch.bz2
-Patch4:		%{name}-%{version}-menu-100.patch.bz2
+Patch1:		%{name}-%{version}-imake.patch
+Patch2:		%{name}-%{version}-security.patch
+Patch3:		%{name}-%{version}-fvwmman.patch
+Patch4:		%{name}-%{version}-menu-100.patch
 Patch5:		%{name}-%{version}-config.patch
 Buildroot:	%{_tmppath}/%{name}-%{version}-root
 
