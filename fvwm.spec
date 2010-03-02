@@ -3,7 +3,7 @@ Version:	1.24r
 Summary:	An X Window System based window manager
 Release:	%mkrel 31
 Epoch:		1
-License:	GPL
+License:	GPLv2+
 Group:		Graphical desktop/FVWM based
 BuildRequires:	X11-devel xpm-devel imake x11-data-bitmaps
 Requires:	x11-data-bitmaps fvwm2-icons xterm xsetroot
