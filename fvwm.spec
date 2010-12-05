@@ -1,7 +1,7 @@
 Name:		fvwm
 Version:	1.24r
 Summary:	An X Window System based window manager
-Release:	%mkrel 31
+Release:	%mkrel 32
 Epoch:		1
 License:	GPLv2+
 Group:		Graphical desktop/FVWM based
