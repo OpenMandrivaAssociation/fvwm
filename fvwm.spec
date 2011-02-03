@@ -1,11 +1,17 @@
 Name:		fvwm
 Version:	1.24r
 Summary:	An X Window System based window manager
-Release:	%mkrel 32
+Release:	%mkrel 33
 Epoch:		1
 License:	GPLv2+
 Group:		Graphical desktop/FVWM based
-BuildRequires:	X11-devel xpm-devel imake x11-data-bitmaps
+BuildRequires:	libx11-devel
+BuildRequires:	libxext-devel
+BuildRequires:	libxpm-devel
+BuildRequires:	libxt-devel
+BuildRequires:	x11-data-bitmaps
+BuildRequires:	libxmu-devel
+BuildRequires:	imake
 Requires:	x11-data-bitmaps fvwm2-icons xterm xsetroot
 URL:		http://www.fvwm.org/
 Source0:	sunsite.unc.edu:/pub/Linux/X11/window-managers/%{name}-%{version}.tar.bz2
@@ -55,15 +61,8 @@ chmod 644 sample.fvwmrc/*
 
 %build
 xmkmf
-perl -p -i -e "s|CXXDEBUGFLAGS = .*|CXXDEBUGFLAGS = $RPM_OPT_FLAGS|" Makefile
-perl -p -i -e "s|CDEBUGFLAGS = .*|CDEBUGFLAGS = $RPM_OPT_FLAGS|" Makefile
 make Makefiles
-perl -p -i -e "s|CXXDEBUGFLAGS = .*|CXXDEBUGFLAGS = $RPM_OPT_FLAGS|" */Makefile
-perl -p -i -e "s|CDEBUGFLAGS = .*|CDEBUGFLAGS = $RPM_OPT_FLAGS|" */Makefile
-perl -p -i -e "s|CXXDEBUGFLAGS = .*|CXXDEBUGFLAGS = $RPM_OPT_FLAGS|" */*/Makefile
-perl -p -i -e "s|CDEBUGFLAGS = .*|CDEBUGFLAGS = $RPM_OPT_FLAGS|" */*/Makefile
-
-%make
+%make CDEBUGFLAGS="%optflags" EXTRA_LDOPTIONS="%ldflags"
 
 %install
 rm -rf %{buildroot}
