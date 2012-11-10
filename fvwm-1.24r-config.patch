@@ -1,0 +1,11 @@
+--- fvwm-1.24r/configure.h.orig	2008-05-20 17:35:42.000000000 -0300
++++ fvwm-1.24r/configure.h	2008-05-20 17:37:02.000000000 -0300
+@@ -57,7 +57,7 @@
+  ***************************************************************************/
+ #define XPM                      
+ /*  linker flags needed to locate and link in the Xpm library, if you use it */
+-#define XPMLIBRARY -L/usr/lib/X11 -lXpm
++#define XPMLIBRARY -lXpm
+ 
+ /***************************************************************************
+  *#define M4

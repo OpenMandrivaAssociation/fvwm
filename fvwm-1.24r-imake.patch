@@ -1,0 +1,192 @@
+--- fvwm-1.24r/modules/GoodStuff/Imakefile.orig	Wed Sep 14 14:18:20 1994
++++ fvwm-1.24r/modules/GoodStuff/Imakefile	Thu Nov  2 20:57:05 1995
+@@ -16,7 +16,7 @@
+ 
+ DEPLIBS = $(DEPXLIB)  ../../libs/libfvwmlib.a   
+ 
+-#ifdef AlphaArchitecture
++#if defined(AlphaArchitecture) && !defined(LinuxArchitecture)
+ LOCAL_LIBRARIES = $(XPMLIB) $(XLIB) -ldnet_stub -L../../libs -lfvwmlib     
+ #else
+ LOCAL_LIBRARIES = $(XPMLIB) $(XLIB) -L../../libs -lfvwmlib     
+--- fvwm-1.24r/modules/FvwmBanner/Imakefile.orig	Wed Sep 14 14:11:32 1994
++++ fvwm-1.24r/modules/FvwmBanner/Imakefile	Thu Nov  2 20:56:20 1995
+@@ -15,7 +15,7 @@
+ 
+ DEPLIBS = $(DEPXLIB) 
+ 
+-#ifdef AlphaArchitecture
++#if defined(AlphaArchitecture) && !defined(LinuxArchitecture)
+ LOCAL_LIBRARIES = $(XPMLIB) $(XLIB) -ldnet_stub -L../../libs -lfvwmlib  
+ #else
+ LOCAL_LIBRARIES = $(XPMLIB) $(XLIB) -L../../libs -lfvwmlib  
+--- fvwm-1.24r/modules/FvwmDebug/Imakefile.orig	Wed Sep 14 14:16:45 1994
++++ fvwm-1.24r/modules/FvwmDebug/Imakefile	Thu Nov  2 20:56:27 1995
+@@ -12,7 +12,7 @@
+ 
+ DEPLIBS = $(DEPXLIB)  ../../libs/libfvwmlib.a   
+ 
+-#ifdef AlphaArchitecture
++#if defined(AlphaArchitecture) && !defined(LinuxArchitecture)
+ LOCAL_LIBRARIES = -ldnet_stub -L../../libs -lfvwmlib     
+ #else
+ LOCAL_LIBRARIES = -L../../libs -lfvwmlib     
+--- fvwm-1.24r/modules/FvwmClean/Imakefile.orig	Wed Sep 14 14:16:37 1994
++++ fvwm-1.24r/modules/FvwmClean/Imakefile	Thu Nov  2 20:56:23 1995
+@@ -13,7 +13,7 @@
+ 
+ DEPLIBS = $(DEPXLIB) ../../libs/libfvwmlib.a
+ 
+-#ifdef AlphaArchitecture
++#if defined(AlphaArchitecture) && !defined(LinuxArchitecture)
+ LOCAL_LIBRARIES = -ldnet_stub -L../../libs -lfvwmlib  
+ #else
+ LOCAL_LIBRARIES = -L../../libs -lfvwmlib  
+--- fvwm-1.24r/modules/FvwmSave/Imakefile.orig	Wed Sep 14 14:17:41 1994
++++ fvwm-1.24r/modules/FvwmSave/Imakefile	Thu Nov  2 20:56:45 1995
+@@ -12,7 +12,7 @@
+ 
+ DEPLIBS = $(DEPXLIB)  ../../libs/libfvwmlib.a   
+ 
+-#ifdef AlphaArchitecture
++#if defined(AlphaArchitecture) && !defined(LinuxArchitecture)
+ LOCAL_LIBRARIES = $(XLIB) -ldnet_stub -L../../libs -lfvwmlib     
+ #else
+ LOCAL_LIBRARIES = $(XLIB) -L../../libs -lfvwmlib     
+--- fvwm-1.24r/modules/FvwmIdent/Imakefile.orig	Wed Sep 14 14:17:18 1994
++++ fvwm-1.24r/modules/FvwmIdent/Imakefile	Thu Nov  2 20:56:35 1995
+@@ -12,7 +12,7 @@
+ 
+ DEPLIBS = $(DEPXLIB)  ../../libs/libfvwmlib.a   
+ 
+-#ifdef AlphaArchitecture
++#if defined(AlphaArchitecture) && !defined(LinuxArchitecture)
+ LOCAL_LIBRARIES = $(XLIB) -ldnet_stub -L../../libs -lfvwmlib     
+ #else
+ LOCAL_LIBRARIES = $(XLIB) -L../../libs -lfvwmlib     
+--- fvwm-1.24r/modules/FvwmPager/Imakefile.orig	Fri Oct  7 12:49:27 1994
++++ fvwm-1.24r/modules/FvwmPager/Imakefile	Thu Nov  2 20:56:39 1995
+@@ -13,7 +13,7 @@
+ 
+ DEPLIBS = $(DEPXLIB)  ../../libs/libfvwmlib.a   
+ 
+-#ifdef AlphaArchitecture
++#if defined(AlphaArchitecture) && !defined(LinuxArchitecture)
+ LOCAL_LIBRARIES = $(XLIB) -ldnet_stub -L../../libs -lfvwmlib     
+ #else
+ LOCAL_LIBRARIES = $(XLIB) -L../../libs -lfvwmlib     
+--- fvwm-1.24r/modules/FvwmWinList/Imakefile.orig	Wed Sep 14 14:18:10 1994
++++ fvwm-1.24r/modules/FvwmWinList/Imakefile	Thu Nov  2 20:57:01 1995
+@@ -14,7 +14,7 @@
+ 
+ DEPLIBS = $(DEPXLIB)  ../../libs/libfvwmlib.a   
+ 
+-#ifdef AlphaArchitecture
++#if defined(AlphaArchitecture) && !defined(LinuxArchitecture)
+ LOCAL_LIBRARIES = $(XLIB) -ldnet_stub -L../../libs -lfvwmlib     
+ #else
+ LOCAL_LIBRARIES = $(XLIB) -L../../libs -lfvwmlib     
+--- fvwm-1.24r/modules/FvwmScroll/Imakefile.orig	Wed Sep 14 14:17:59 1994
++++ fvwm-1.24r/modules/FvwmScroll/Imakefile	Thu Nov  2 20:56:57 1995
+@@ -12,7 +12,7 @@
+ 
+ DEPLIBS = $(DEPXLIB)  ../../libs/libfvwmlib.a   
+ 
+-#ifdef AlphaArchitecture
++#if defined(AlphaArchitecture) && !defined(LinuxArchitecture)
+ LOCAL_LIBRARIES = $(XLIB) -ldnet_stub -L../../libs -lfvwmlib     
+ #else
+ LOCAL_LIBRARIES = $(XLIB) -L../../libs -lfvwmlib     
+--- fvwm-1.24r/modules/FvwmBacker/Imakefile.orig	Wed Sep 21 19:21:05 1994
++++ fvwm-1.24r/modules/FvwmBacker/Imakefile	Thu Nov  2 20:56:12 1995
+@@ -14,7 +14,7 @@
+ 
+ DEPLIBS = $(DEPXLIB) ../../libs/libfvwmlib.a
+ 
+-#ifdef AlphaArchitecture
++#if defined(AlphaArchitecture) && !defined(LinuxArchitecture)
+ LOCAL_LIBRARIES = $(XLIB) -ldnet_stub -L../../libs -lfvwmlib  
+ #else
+ LOCAL_LIBRARIES = $(XLIB) -L../../libs -lfvwmlib  
+--- fvwm-1.24r/modules/FvwmAudio/Imakefile.orig	Wed Sep 14 14:13:44 1994
++++ fvwm-1.24r/modules/FvwmAudio/Imakefile	Thu Nov  2 20:55:45 1995
+@@ -29,7 +29,7 @@
+ 
+ DEPLIBS = $(DEPXLIB)  ../../libs/libfvwmlib.a
+ 
+-#ifdef AlphaArchitecture
++#if defined(AlphaArchitecture) && !defined(LinuxArchitecture)
+ LOCAL_LIBRARIES = -ldnet_stub -L../../libs -lfvwmlib  
+ #else
+ LOCAL_LIBRARIES = -L../../libs -lfvwmlib  
+--- fvwm-1.24r/modules/FvwmIconBox/Imakefile.orig	Wed Sep 14 14:17:06 1994
++++ fvwm-1.24r/modules/FvwmIconBox/Imakefile	Thu Nov  2 20:56:31 1995
+@@ -16,7 +16,7 @@
+ 
+ DEPLIBS = $(DEPXLIB)  ../../libs/libfvwmlib.a   
+ 
+-#ifdef AlphaArchitecture
++#if defined(AlphaArchitecture) && !defined(LinuxArchitecture)
+ LOCAL_LIBRARIES = $(XPMLIB) $(XLIB) -ldnet_stub -L../../libs -lfvwmlib     
+ #else
+ LOCAL_LIBRARIES = $(XPMLIB) $(XLIB) -L../../libs -lfvwmlib     
+--- fvwm-1.24r/modules/FvwmSaveDesk/Imakefile.orig	Wed Sep 14 14:17:50 1994
++++ fvwm-1.24r/modules/FvwmSaveDesk/Imakefile	Thu Nov  2 20:56:49 1995
+@@ -12,7 +12,7 @@
+ 
+ DEPLIBS = $(DEPXLIB)  ../../libs/libfvwmlib.a   
+ 
+-#ifdef AlphaArchitecture
++#if defined(AlphaArchitecture) && !defined(LinuxArchitecture)
+ LOCAL_LIBRARIES = $(XLIB) -ldnet_stub -L../../libs -lfvwmlib     
+ #else
+ LOCAL_LIBRARIES = $(XLIB) -L../../libs -lfvwmlib     
+--- fvwm-1.24r/modules/FvwmAuto/Imakefile.orig	Fri Dec  2 19:04:02 1994
++++ fvwm-1.24r/modules/FvwmAuto/Imakefile	Thu Nov  2 20:56:09 1995
+@@ -13,7 +13,7 @@
+ 
+ DEPLIBS = $(DEPXLIB) ../../libs/libfvwmlib.a
+ 
+-#ifdef AlphaArchitecture
++#if defined(AlphaArchitecture) && !defined(LinuxArchitecture)
+ LOCAL_LIBRARIES = -ldnet_stub -L../../libs -lfvwmlib  
+ #else
+ LOCAL_LIBRARIES = -L../../libs -lfvwmlib  
+--- fvwm-1.24r/fvwm/Imakefile.orig	Fri Sep 16 14:36:44 1994
++++ fvwm-1.24r/fvwm/Imakefile	Thu Nov  2 20:54:35 1995
+@@ -17,7 +17,11 @@
+ DEPLIBS = $(DEPXLIB) ../libs/libfvwmlib.a
+ 
+ #ifdef AlphaArchitecture
++#ifdef LinuxArchitecture
++LOCAL_LIBRARIES = $(XPMLIB) $(XLIB) -lfvwmlib -L../libs
++#else
+ LOCAL_LIBRARIES = $(XPMLIB) $(XLIB) -ldnet_stub -L../libs -lfvwmlib
++#endif /* LinuxArchitecture */
+ #else 
+ #ifdef HPArchitecture
+ LOCAL_LIBRARIES = $(XPMLIB) $(XLIB) -lV3 -L../libs -lfvwmlib
+--- fvwm-1.24r/fvwm/alpha_header.h.orig	Thu Nov  2 21:03:37 1995
++++ fvwm-1.24r/fvwm/alpha_header.h	Thu Nov  2 21:03:53 1995
+@@ -1,3 +1,5 @@
++#ifndef __linux__
++
+ /**************************************************************************/
+ /* If I do ALL this, I can compile OK with -Wall -Wstrict-prototypes on the
+  * alpha's */
+@@ -16,3 +18,4 @@
+ extern int gethostname (char *, int);
+ /**************************************************************************/
+ 
++#endif
+--- fvwm-1.24r/xpmroot/Imakefile.orig	Fri Nov  3 13:25:08 1995
++++ fvwm-1.24r/xpmroot/Imakefile	Fri Nov  3 13:25:09 1995
+@@ -15,7 +15,7 @@
+ 
+ DEPLIBS = $(DEPXLIB) ../libs/libfvwmlib.a
+ 
+-#ifdef AlphaArchitecture
++#if defined(AlphaArchitecture) && !defined(LinuxArchitecture)
+ LOCAL_LIBRARIES = $(XPMLIB) $(XLIB) -ldnet_stub -L../libs -lfvwmlib
+ #else
+ LOCAL_LIBRARIES = $(XPMLIB) $(XLIB) -L../libs -lfvwmlib

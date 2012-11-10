@@ -1,0 +1,31 @@
+--- fvwm-1.24r/fvwm/Imakefile.fsstnd	Fri Sep 16 10:36:44 1994
++++ fvwm-1.24r/fvwm/Imakefile	Fri May  1 16:02:42 1998
+@@ -39,5 +39,5 @@
+        decorations.o colormaps.o misc.o style.o
+ 
+ ComplexProgramTarget(fvwm)
+-InstallNamedNonExec(../sample.fvwmrc/system.fvwmrc,system.fvwmrc,FVWMDIR)
++InstallNamedNonExec(../sample.fvwmrc/system.fvwmrc,system.fvwmrc,/usr/share/X11/fvwm)
+ 
+--- fvwm-1.24r/configure.h.fsstnd	Mon Nov 28 16:08:47 1994
++++ fvwm-1.24r/configure.h	Fri May  1 16:09:45 1998
+@@ -1,7 +1,7 @@
+-#define FVWMDIR     "/usr/lib/X11/fvwm"
++#define FVWMDIR     "/usr/share/X11/fvwm"
+ /* #define FVWMDIR        "/local/homes/dsp/nation/modules"*/
+-#define FVWM_ICONDIR   "/usr/include/X11/bitmaps:/usr/include/X11/pixmaps"
+-#define FVWMRC         "/usr/lib/X11/fvwm/system.fvwmrc"
++#define FVWM_ICONDIR   "/usr/include/X11/bitmaps:/usr/include/X11/pixmaps:/usr/share/pixmaps:/usr/share/icons"
++#define FVWMRC         "/usr/share/X11/fvwm/system.fvwmrc"
+ 
+ /* Imake command needed to put modules in desired target location */
+ /* Use the second version if it causes grief */
+@@ -14,7 +14,7 @@
+  * If you want to install it in a different directory, uncomment and
+  * edit the first line */
+ /* #define FVWM_BIN_DIR BINDIR=/local/homes/dsp/nation/bin/4.1.3*/
+-#define FVWM_BIN_DIR BINDIR=/usr/bin/X11
++#define FVWM_BIN_DIR BINDIR=/usr/bin
+ /*#define FVWM_BIN_DIR*/
+ 
+ /* Compiler over-ride for Imakefiles */

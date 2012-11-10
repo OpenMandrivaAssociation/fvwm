@@ -1,0 +1,162 @@
+--- fvwm-1.24r/modules/GoodStuff/Imakefile.marc	Wed Sep  4 09:42:04 1996
++++ fvwm-1.24r/modules/GoodStuff/Imakefile	Wed Sep  4 09:57:21 1996
+@@ -10,6 +10,8 @@
+ 
+ COMPILER
+ 
++MANSUFFIX = 1fvwm
++
+ #ifdef XPM
+ XPMLIB = XPMLIBRARY
+ #endif
+--- fvwm-1.24r/modules/FvwmBanner/Imakefile.marc	Wed Sep  4 09:42:04 1996
++++ fvwm-1.24r/modules/FvwmBanner/Imakefile	Wed Sep  4 09:57:54 1996
+@@ -10,6 +10,8 @@
+ 
+ COMPILER
+ 
++MANSUFFIX = 1fvwm
++
+ #ifdef XPM
+ XPMLIB = XPMLIBRARY
+ 
+--- fvwm-1.24r/modules/FvwmDebug/Imakefile.marc	Wed Sep  4 09:42:04 1996
++++ fvwm-1.24r/modules/FvwmDebug/Imakefile	Wed Sep  4 09:57:46 1996
+@@ -10,6 +10,8 @@
+ 
+ COMPILER
+ 
++MANSUFFIX = 1fvwm
++
+ DEPLIBS = $(DEPXLIB)  ../../libs/libfvwmlib.a   
+ 
+ #if defined(AlphaArchitecture) && !defined(LinuxArchitecture)
+--- fvwm-1.24r/modules/FvwmClean/Imakefile.marc	Wed Sep  4 09:42:04 1996
++++ fvwm-1.24r/modules/FvwmClean/Imakefile	Wed Sep  4 09:57:51 1996
+@@ -10,6 +10,7 @@
+ 
+ COMPILER
+ 
++MANSUFFIX = 1fvwm
+ 
+ DEPLIBS = $(DEPXLIB) ../../libs/libfvwmlib.a
+ 
+--- fvwm-1.24r/modules/FvwmSave/Imakefile.marc	Wed Sep  4 09:42:04 1996
++++ fvwm-1.24r/modules/FvwmSave/Imakefile	Wed Sep  4 09:57:33 1996
+@@ -10,6 +10,8 @@
+ 
+ COMPILER
+ 
++MANSUFFIX = 1fvwm
++
+ DEPLIBS = $(DEPXLIB)  ../../libs/libfvwmlib.a   
+ 
+ #if defined(AlphaArchitecture) && !defined(LinuxArchitecture)
+--- fvwm-1.24r/modules/FvwmIdent/Imakefile.marc	Wed Sep  4 09:42:04 1996
++++ fvwm-1.24r/modules/FvwmIdent/Imakefile	Wed Sep  4 09:57:39 1996
+@@ -10,6 +10,8 @@
+ 
+ COMPILER
+ 
++MANSUFFIX = 1fvwm
++
+ DEPLIBS = $(DEPXLIB)  ../../libs/libfvwmlib.a   
+ 
+ #if defined(AlphaArchitecture) && !defined(LinuxArchitecture)
+--- fvwm-1.24r/modules/FvwmPager/Imakefile.marc	Wed Sep  4 09:42:04 1996
++++ fvwm-1.24r/modules/FvwmPager/Imakefile	Wed Sep  4 09:57:36 1996
+@@ -11,6 +11,8 @@
+ 
+ COMPILER
+ 
++MANSUFFIX = 1fvwm
++
+ DEPLIBS = $(DEPXLIB)  ../../libs/libfvwmlib.a   
+ 
+ #if defined(AlphaArchitecture) && !defined(LinuxArchitecture)
+--- fvwm-1.24r/modules/FvwmWinList/Imakefile.marc	Wed Sep  4 09:42:04 1996
++++ fvwm-1.24r/modules/FvwmWinList/Imakefile	Wed Sep  4 09:57:24 1996
+@@ -12,6 +12,8 @@
+ 
+ COMPILER
+ 
++MANSUFFIX = 1fvwm
++
+ DEPLIBS = $(DEPXLIB)  ../../libs/libfvwmlib.a   
+ 
+ #if defined(AlphaArchitecture) && !defined(LinuxArchitecture)
+--- fvwm-1.24r/modules/FvwmScroll/Imakefile.marc	Wed Sep  4 09:42:04 1996
++++ fvwm-1.24r/modules/FvwmScroll/Imakefile	Wed Sep  4 09:57:27 1996
+@@ -10,6 +10,8 @@
+ 
+ COMPILER
+ 
++MANSUFFIX = 1fvwm
++
+ DEPLIBS = $(DEPXLIB)  ../../libs/libfvwmlib.a   
+ 
+ #if defined(AlphaArchitecture) && !defined(LinuxArchitecture)
+--- fvwm-1.24r/modules/FvwmBacker/Imakefile.marc	Wed Sep  4 09:42:04 1996
++++ fvwm-1.24r/modules/FvwmBacker/Imakefile	Wed Sep  4 09:57:58 1996
+@@ -12,6 +12,8 @@
+ 
+ COMPILER
+ 
++MANSUFFIX = 1fvwm
++
+ DEPLIBS = $(DEPXLIB) ../../libs/libfvwmlib.a
+ 
+ #if defined(AlphaArchitecture) && !defined(LinuxArchitecture)
+--- fvwm-1.24r/modules/FvwmAudio/Imakefile.marc	Wed Sep  4 09:54:41 1996
++++ fvwm-1.24r/modules/FvwmAudio/Imakefile	Wed Sep  4 09:56:29 1996
+@@ -12,6 +12,7 @@
+ 
+ /* #define HAVE_RPLAY */
+ 
++MANSUFFIX = 1fvwm
+ 
+ #ifdef HAVE_RPLAY
+ AUDIO_DEFINES = -DHAVE_RPLAY
+--- fvwm-1.24r/modules/FvwmIconBox/Imakefile.marc	Wed Sep  4 09:42:04 1996
++++ fvwm-1.24r/modules/FvwmIconBox/Imakefile	Wed Sep  4 09:57:43 1996
+@@ -10,6 +10,8 @@
+ 
+ COMPILER
+ 
++MANSUFFIX = 1fvwm
++
+ #ifdef XPM
+ XPMLIB = XPMLIBRARY
+ #endif
+--- fvwm-1.24r/modules/FvwmSaveDesk/Imakefile.marc	Wed Sep  4 09:42:04 1996
++++ fvwm-1.24r/modules/FvwmSaveDesk/Imakefile	Wed Sep  4 09:57:30 1996
+@@ -10,6 +10,8 @@
+ 
+ COMPILER
+ 
++MANSUFFIX = 1fvwm
++
+ DEPLIBS = $(DEPXLIB)  ../../libs/libfvwmlib.a   
+ 
+ #if defined(AlphaArchitecture) && !defined(LinuxArchitecture)
+--- fvwm-1.24r/modules/FvwmAuto/Imakefile.marc	Wed Sep  4 09:42:04 1996
++++ fvwm-1.24r/modules/FvwmAuto/Imakefile	Wed Sep  4 09:58:02 1996
+@@ -10,6 +10,7 @@
+ 
+ COMPILER
+ 
++MANSUFFIX = 1fvwm
+ 
+ DEPLIBS = $(DEPXLIB) ../../libs/libfvwmlib.a
+ 
+--- fvwm-1.24r/Imakefile.marc	Wed Sep  4 09:51:04 1996
++++ fvwm-1.24r/Imakefile	Wed Sep  4 09:51:17 1996
+@@ -28,7 +28,7 @@
+           modules/FvwmWinList
+ 
+ #ifdef XPM
+-XPMSUBDIRS = xpmroot modules/FvwmBanner 
++XPMSUBDIRS = modules/FvwmBanner 
+ #endif
+ 
+ SUBDIRS = $(ALLSUBDIRS) $(XPMSUBDIRS) $(SHAPESUBDIRS)
