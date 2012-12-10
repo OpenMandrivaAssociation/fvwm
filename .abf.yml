@@ -1,7 +1,2 @@
 sources:
-  "fvwm-1.24r-system-menu.fvwmrc:"	30856ebf9a763a2930891a109314967dc60b3ee9
-  "fvwm-1.24r.tar.bz2:"	dce3bf6107e867c3a6c6c3a88a5ab1d3cf467c98
-  "fvwm1.menu-method:"	a3b7d2f9d9c8ca63cb4c02326d0a5e2ea81e4a1b
-  "fvwm.icon-16.png:"	a6e83319c5b8b6459afc3518d198e74b6d665c53
-  "fvwm.icon-32.png:"	e0439bc11abc901c92e78ad246d7495cdbe291fa
-  "fvwm.icon-48.png:"	0453ff9cccbea2fe289291879debe0930012adb5
+  "fvwm-1.24r.tar.bz2": dce3bf6107e867c3a6c6c3a88a5ab1d3cf467c98

@@ -135,3 +135,157 @@ rm -fr %{buildroot}
 %{_bindir}/fvwm
 %{_bindir}/startfvwm
 %{_mandir}/man*/*
+
+
+%changelog
+* Thu Feb 03 2011 Funda Wang <fwang@mandriva.org> 1:1.24r-33mdv2011.0
++ Revision: 635470
+- tighten BR
+
+* Sun Dec 05 2010 Oden Eriksson <oeriksson@mandriva.com> 1:1.24r-32mdv2011.0
++ Revision: 610781
+- rebuild
+
+* Tue Mar 02 2010 Michael Scherer <misc@mandriva.org> 1:1.24r-31mdv2010.1
++ Revision: 513429
+- fix rpmlint warning on startfvwm
+- fix License
+- move fwvm session file to the proper directory ( fix #57945 )
+
+* Thu Sep 03 2009 Thierry Vignaud <tv@mandriva.org> 1:1.24r-31mdv2010.0
++ Revision: 428977
+- rebuild
+
+* Thu Aug 07 2008 Thierry Vignaud <tv@mandriva.org> 1:1.24r-30mdv2009.0
++ Revision: 266825
+- rebuild early 2009.0 package (before pixel changes)
+
+  + Pixel <pixel@mandriva.com>
+    - rpm filetriggers deprecates update_menus/update_scrollkeeper/update_mime_database/update_icon_cache/update_desktop_database/post_install_gconf_schemas
+
+* Fri May 30 2008 Paulo Andrade <pcpa@mandriva.com.br> 1:1.24r-29mdv2009.0
++ Revision: 213535
+- Uncompress some of the patches to make it easier to change them, and
+  also to allow viewing the diffs in the commit mail logs.
+  Add extra minimal Requires.
+  Patch fvwm-1.24r-config.patch was actually undoing
+  fvwm-1.24r-fsstnd.patch.bz2 and adding yet another alternative
+  (from /usr/bin/X11 to /usr/X11R6/bin to /usr/bin ...), but was kept as
+  it is still required to tell how to link with libXpm (could also just
+  be merged in another patch).
+
+* Wed May 21 2008 Paulo Andrade <pcpa@mandriva.com.br> 1:1.24r-27mdv2009.0
++ Revision: 209604
+- Don't install files under /usr/X11R6.
+  These changes should allow rebuilding the package and passing build
+  system tests.
+  Directly install data files in /usr/share/X11.
+
+* Thu Jan 03 2008 Thierry Vignaud <tv@mandriva.org> 1:1.24r-26mdv2008.1
++ Revision: 141940
+- auto-convert XDG menu entry
+- adjust file list
+- fix man pages directory
+- BR imake
+- kill re-definition of %%buildroot on Pixel's request
+- buildrequires X11-devel instead of XFree86-devel
+- use %%mkrel
+- import fvwm
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+
+* Sun Mar 13 2005 Franck Villaume <fvill@freesurf.fr> 1.24r-26mdk
+- add missing files
+
+* Thu Feb 26 2004 Olivier Thauvin <thauvin@aerov.jussieu.fr> 1.24r-25mdk
+- own /etc/X11/fvwm
+
+* Mon Dec 29 2003 Marcel Pol <mpol@mandrake.org> 1.24r-24mdk
+- add startfvwm script to set cursor
+- unzip icons
+
+* Sat Mar 15 2003 Marcel Pol <mpol@gmx.net> 1.24r-23mdk
+- buildrequires: XFree86
+
+* Mon Mar 11 2002 Guillaume Rousse <g.rousse@linux-mandrake.com> 1.24r-22mdk
+- resurrected by popular demand 
+- s/Copyright/License/
+- used png icons
+
+* Mon Jan 07 2002 David BAUDENS <baudens@mandrakesoft.com> 1.24r-21mdk
+- Rebuild
+
+* Mon Nov 13 2000 David BAUDENS <baudens@mandrakesoft.com> 1.24r-20mdk
+- Build with glibc-2.2 & gcc-2.96
+
+* Mon Aug 07 2000 Frederic Lepied <flepied@mandrakesoft.com> 1.24r-19mdk
+- automatically added BuildRequires
+
+* Wed Jul 12 2000 Chmouel Boudjnah <chmouel@mandrakesoft.com> 1.24r-18mdk
+- Add support for the new chksession.
+
+* Sun May 13 2000 David BAUDENS <baudens@mandrakesoft.com> 1.24r-17mdk
+- Fix build for i486
+
+* Tue May  2 2000 Guillaume Cottenceau <gc@mandrakesoft.com> 1.24r-16mdk
+- moved icons' ratio to 1.0 because some wm won't resize keeping aspect ratio
+- added a mini icon
+
+* Mon May  1 2000 Guillaume Cottenceau <gc@mandrakesoft.com> 1.24r-15mdk
+- fixed postun script
+- added url
+- added icons
+- cleaned up specfile
+- removed version in menu entry
+
+* Fri Apr 28 2000 damien <damien@mandrakesoft.com> 1.24r-14mdk
+- added fndSession call.
+
+* Fri Apr  7 2000 DindinX <odin@mandrakesoft.com> 1.24r-13mdk
+- Still better default configuration
+- Added support for the 'Menu' key.
+
+* Wed Apr  5 2000 Chmouel Boudjnah <chmouel@mandrakesoft.com> 1.24r-12mdk
+- Better default configuration.
+- Menu can do more than 50 entry.
+- Add menu support.
+
+* Mon Mar 27 2000 DindinX <odin@mandrakesoft.com> 1.24r-11mdk
+- Spec fixes
+
+* Wed Jan 12 2000 Pixel <pixel@mandrakesoft.com>
+- fix build as non-root (defattr)
+
+* Wed Nov 03 1999 Jerome Martin <jerome@mandrakesoft.com>
+- rebuild for new distribution
+- minor specfile cleanup
+
+* Tue May 11 1999 Bernhard Rosenkraenzer <bero@mandrakesoft.com>
+- Mandrake adaptions
+
+* Sun Mar 21 1999 Cristian Gafton <gafton@redhat.com> 
+- auto rebuild in the new build environment (release 17)
+
+* Wed Dec 30 1998 Cristian Gafton <gafton@redhat.com>
+- build for glibc 2.1
+
+* Thu May 07 1998 Prospector System <bugs@redhat.com>
+- translations modified for de, fr, tr
+
+* Fri May 01 1998 Cristian Gafton <gafton@redhat.com>
+- tagged config files correctly
+- buildroot
+
+* Thu Oct 23 1997 Cristian Gafton <gafton@redhat.com>
+- fixed it for AnotherLevel (icon paths, etc)
+
+* Thu Jul 10 1997 Erik Troan <ewt@redhat.com>
+- built against glibc
+
+* Mon Mar 24 1997 Michael Fulbright <msf@redhat.com>
+- Fixed system.fvwmrc to point at /usr/X11R6/include/X11/bitmaps and pixmaps. 
+  Fvwm wasn't find icons otherwise, which is why they disappeared if someone
+  upgraded from 4.0 to 4.1! 
+

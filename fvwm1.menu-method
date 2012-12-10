@@ -1,0 +1,46 @@
+#!/bin/sh
+
+if [ "$USER_MENU" = "1" ]; then
+    OUTPUTDIR=$HOME/.fvwm
+else
+    OUTPUTDIR=/usr/share/X11/fvwm
+fi
+
+cat > $OUTPUTDIR/system.fvwmrc << EOF
+compat="menu-1"
+
+!include menu.h
+
+compat="menu-2"
+
+function ex($com)=" Exec \""               translate(lang(), title()) "\" exec " $com " &\n";
+function mod($var,$com)    =" " $var " \"" translate(lang(), title()) "\" " $com "\n";
+
+supported;
+  fvwm1module= mod("Module",  $command);
+  wm=          mod("Restart", $command);
+  x11fvwm=     ex($command);
+  x11=         ex($command);
+  text=        ex(term());
+endsupported;
+
+startmenu=   "Popup \"" $section "\"\n";
+endmenu=     ifeqelse($section, "/Mandrake", 
+             "	 Nop	\"\"\n	Quit	\"" translate(lang(), "Quit") "\"\nEndPopup\n\n",
+             "EndPopup\n\n");
+submenutitle="  Popup \"" translate(lang(), title()) "\" "
+              $section "\n";
+genmenu=      "menudefs1.hook";
+rcfile=       "system.fvwmrc";
+examplercfile="system.fvwmrc-menu";
+rootprefix="/usr/share/X11/fvwm/";
+userprefix=".fvwm/";
+mainmenutitle="MandrakeMenu";
+EOF
+
+if [ "$VERBOSE" = "1" ]; then
+    echo "writing to $OUTPUTDIR/menu"
+    /usr/bin/xdg_menu --verbose --format fvwm --language "" >> $OUTPUTDIR/system.fvwmrc
+else
+    /usr/bin/xdg_menu --format fvwm --language "" >> $OUTPUTDIR/system.fvwmrc 2> /dev/null
+fi
