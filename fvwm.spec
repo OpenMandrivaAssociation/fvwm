@@ -1,7 +1,7 @@
 Name:		fvwm
 Version:	1.24r
 Summary:	An X Window System based window manager
-Release:	%mkrel 33
+Release:	34
 Epoch:		1
 License:	GPLv2+
 Group:		Graphical desktop/FVWM based
@@ -108,15 +108,9 @@ EOF
 chmod 755 %{buildroot}%{_bindir}/startfvwm
 
 %post
-%if %mdkversion < 200900
-%update_menus
-%endif
 %make_session
 
 %postun
-%if %mdkversion < 200900
-%clean_menus
-%endif
 %make_session
 
 %clean
