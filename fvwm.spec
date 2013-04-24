@@ -107,8 +107,6 @@ exec %{_bindir}/fvwm
 EOF
 chmod 755 %{buildroot}%{_bindir}/startfvwm
 
-%post
-%make_session
 
 %postun
 %make_session
