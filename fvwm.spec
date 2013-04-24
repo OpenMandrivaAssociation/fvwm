@@ -108,8 +108,6 @@ EOF
 chmod 755 %{buildroot}%{_bindir}/startfvwm
 
 
-%postun
-%make_session
 
 %clean
 rm -fr %{buildroot}
