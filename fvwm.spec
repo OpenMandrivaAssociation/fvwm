@@ -5,12 +5,12 @@ Release:	36
 Epoch:		1
 License:	GPLv2+
 Group:		Graphical desktop/FVWM based
-BuildRequires:	libx11-devel
-BuildRequires:	libxext-devel
-BuildRequires:	libxpm-devel
-BuildRequires:	libxt-devel
+BuildRequires:	pkgconfig(x11)
+BuildRequires:	pkgconfig(xext)
+BuildRequires:	pkgconfig(xpm)
+BuildRequires:	pkgconfig(xt)
 BuildRequires:	x11-data-bitmaps
-BuildRequires:	libxmu-devel
+BuildRequires:	pkgconfig(xmu)
 BuildRequires:	imake
 Requires:	x11-data-bitmaps fvwm2-icons xterm xsetroot
 URL:		http://www.fvwm.org/
