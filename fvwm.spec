@@ -1,7 +1,7 @@
 Name:		fvwm
 Version:	1.24r
 Summary:	An X Window System based window manager
-Release:	36
+Release:	37
 Epoch:		1
 License:	GPLv2+
 Group:		Graphical desktop/FVWM based
@@ -32,7 +32,6 @@ Patch3:		%{name}-%{version}-fvwmman.patch
 Patch4:		%{name}-%{version}-menu-100.patch
 # remove /usr/lib/X11 from linker search path 
 Patch5:		%{name}-%{version}-config.patch
-Buildroot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
 FVWM (the F stands for whatever you want, but the VWM stands for Virtual Window
