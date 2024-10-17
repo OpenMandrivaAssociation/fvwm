@@ -13,7 +13,7 @@ BuildRequires:	x11-data-bitmaps
 BuildRequires:	pkgconfig(xmu)
 BuildRequires:	imake
 Requires:	x11-data-bitmaps fvwm2-icons xterm xsetroot
-URL:		http://www.fvwm.org/
+URL:		https://www.fvwm.org/
 Source0:	sunsite.unc.edu:/pub/Linux/X11/window-managers/%{name}-%{version}.tar.bz2
 Source1:	%{name}-%{version}-system-menu.fvwmrc
 Source2:	fvwm1.menu-method
